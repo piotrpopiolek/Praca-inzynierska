@@ -7,17 +7,11 @@ import soccerToken from "../soccerToken";
 class RowMatch extends Component {
   state = {
     manager: "",
-    balance: "",
     message: "",
     payment: false
   };
 
   handlePay = () => {};
-
-  async componentDidMount() {
-    const balance = await web3.eth.getBalance(soccerToken.options.address);
-    this.setState({ balance });
-  }
 
   onClick = async event => {
     const accounts = await web3.eth.getAccounts();
