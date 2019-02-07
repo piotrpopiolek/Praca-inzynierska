@@ -18,10 +18,11 @@ class RowMatch extends Component {
 
     this.setState({ message: "Rozpoczynam transakcję..." });
 
+    /*
     await soccerToken.methods.pay().send({
       from: accounts[0]
     });
-
+    */
     this.setState({ message: "Transakcja zakończona." });
 
     this.setState(() => ({

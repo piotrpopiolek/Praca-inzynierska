@@ -71,6 +71,42 @@ const TabTopTeam = () => (
           5<br />
         </Table.Cell>
       </Table.Row>
+      <Table.Row>
+        <Table.Cell>Seria wygranych meczów</Table.Cell>
+        <Table.Cell>
+          Notes
+          <br />
+          1<br />
+          2<br />
+          3<br />
+          4<br />
+          5<br />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Seria zremisowanych meczów</Table.Cell>
+        <Table.Cell>
+          Notes
+          <br />
+          1<br />
+          2<br />
+          3<br />
+          4<br />
+          5<br />
+        </Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell>Seria przegranych meczów</Table.Cell>
+        <Table.Cell>
+          Notes
+          <br />
+          1<br />
+          2<br />
+          3<br />
+          4<br />
+          5<br />
+        </Table.Cell>
+      </Table.Row>
     </Table.Body>
   </Table>
 );

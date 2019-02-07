@@ -7,12 +7,17 @@ import web3 from "../web3";
 
 class FormSale extends Component {
   state = {
+    name: "",
+    symbol: "",
     address: "",
     numberOfTokens: "",
     tokenPrice: 1000000000000000,
-    tokensSold: "",
+    tokenPriceInEther: 0.0001,
+    tokensAvailable: 1000000,
+    tokensSold: 256440,
+    percent: "",
     message: "",
-    balance: "",
+    balance: 10000,
     loading: false,
     errorMessage: ""
   };
@@ -22,10 +27,21 @@ class FormSale extends Component {
     this.setState({
       address: accounts[0]
     });
+    this.setState({
+      percent: (this.state.tokensSold / this.state.tokensAvailable) * 100
+    });
     const balance1 = soccerTokenSale.options.address;
     console.log(balance1);
     const balance2 = soccerToken.options.address;
     console.log(balance2);
+  }
+
+  async componentDidUpdate() {
+    /*
+    this.setState({
+      percent: (this.state.tokensSold / this.state.tokensAvailable) * 100
+    });
+    */
   }
 
   onSubmit = async event => {
@@ -36,7 +52,9 @@ class FormSale extends Component {
 
     try {
       await soccerTokenSale.methods.buyTokens(numberOfTokens).send({
-        from: accounts[0]
+        from: accounts[0],
+        value: numberOfTokens * tokenPrice,
+        gas: 500000
       });
     } catch (err) {
       this.setState({ errorMessage: err.message });
@@ -49,8 +67,10 @@ class FormSale extends Component {
     return (
       <>
         <h3>Sprzedaż tokenów SFT</h3>
+        <h1>{this.state.symbol}</h1>
         <p>
-          Token SPF kosztuje {this.state.tokenPrice} Etheru. Aktualnie posiadasz
+          Token SPF kosztuje {this.state.tokenPriceInEther} Etheru. Aktualnie
+          posiadasz
           {this.state.balance} sztuk SPF.
         </p>
         <p>{this.state.errorMessage}</p>
@@ -66,15 +86,15 @@ class FormSale extends Component {
                 this.setState({ numberOfTokens: event.target.numberOfTokens })
               }
             />
+            <Button primary loading={this.state.loading}>
+              Kup SFT
+            </Button>
           </Form.Field>
           <Message error header="Oops!" content={this.state.errorMessage} />
-          <Button primary loading={this.state.loading}>
-            Kup SFT
-          </Button>
         </Form>
-        <ProgressBar color="olive" percent="10" />
+        <ProgressBar color="olive" percent={this.state.percent} />
         <p className="center">
-          {this.state.tokensSold}/{this.state.numberOfTokens}
+          {this.state.tokensSold}/{this.state.tokensAvailable}
         </p>
         <p className="center">
           Adres Twojego portfela to: {this.state.address}

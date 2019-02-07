@@ -614,7 +614,7 @@ class App extends Component {
     const matches = data.matches;
     return (
       <Layout>
-        <FormSale />
+        {/*<FormSale />*/}
         {matches.map(match => (
           <RowMatch key={match.id} match={match} />
         ))}
