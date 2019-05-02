@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Table, Button } from "semantic-ui-react";
 import TabMatch from "./TabMatch";
+import TabBet from "./TabBet";
 import web3 from "../web3";
 import soccerToken from "../soccerToken";
 
@@ -8,12 +9,13 @@ class RowMatch extends Component {
   state = {
     manager: "",
     message: "",
-    payment: false
+    payment: false,
+    bet: false
   };
 
   handlePay = () => {};
 
-  onClick = async event => {
+  onPay = async event => {
     const accounts = await web3.eth.getAccounts();
 
     this.setState({ message: "Rozpoczynam transakcję..." });
@@ -27,6 +29,23 @@ class RowMatch extends Component {
 
     this.setState(() => ({
       payment: !this.state.payment
+    }));
+  };
+
+  onBet = async event => {
+    const accounts = await web3.eth.getAccounts();
+
+    this.setState({ message: "Rozpoczynam transakcję..." });
+
+    /*
+    await soccerToken.methods.pay().send({
+      from: accounts[0]
+    });
+    */
+    this.setState({ message: "Transakcja zakończona." });
+
+    this.setState(() => ({
+      bet: !this.state.bet
     }));
   };
 
@@ -52,17 +71,24 @@ class RowMatch extends Component {
               <Cell textAlign="center">{match.time}</Cell>
               <Cell textAlign="left">{match.home}</Cell>
               <Cell textAlign="left">{match.guest}</Cell>
-              <Cell textAlign="center">{match.r1}</Cell>
-              <Cell textAlign="center">{match.rX}</Cell>
-              <Cell textAlign="center">{match.r2}</Cell>
+              <Cell onClick={this.onBet} className="bet" textAlign="center">
+                {match.r1}
+              </Cell>
+              <Cell onClick={this.onBet} className="bet" textAlign="center">
+                {match.rX}
+              </Cell>
+              <Cell onClick={this.onBet} className="bet" textAlign="center">
+                {match.r2}
+              </Cell>
               <Cell textAlign="center">
-                <Button onClick={this.onClick}>Zobacz</Button>
+                <Button onClick={this.onPay}>Zobacz</Button>
               </Cell>
             </Row>
           </Body>
         </Table>
         <h1>{this.state.message}</h1>
         {this.state.payment ? <TabMatch H2H={this.props.match} /> : null}
+        {this.state.bet ? <TabBet matchDetail={this.props.match} /> : null}
       </>
     );
   }
