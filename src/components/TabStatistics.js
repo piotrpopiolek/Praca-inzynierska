@@ -113,6 +113,15 @@ const TabStatistics = () => (
         <Table.Cell width="1">Cell</Table.Cell>
         <Table.Cell width="6">Cell</Table.Cell>
         <Table.Cell width="3" textAlign="center">
+          Czerwone kartki
+        </Table.Cell>
+        <Table.Cell width="6">Cell</Table.Cell>
+        <Table.Cell width="1">Cell</Table.Cell>
+      </Table.Row>
+      <Table.Row>
+        <Table.Cell width="1">Cell</Table.Cell>
+        <Table.Cell width="6">Cell</Table.Cell>
+        <Table.Cell width="3" textAlign="center">
           Liczba podań
         </Table.Cell>
         <Table.Cell width="6">Cell</Table.Cell>
