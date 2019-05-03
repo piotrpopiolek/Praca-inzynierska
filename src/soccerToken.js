@@ -1,13 +1,18 @@
 import web3 from "./web3";
 
-const address = "0xCca1f926C03180Aec4AF0172A03844BD3988025C";
+const address = "0xbf8f0fA34925cA589C4555BEaEc13d624E988C50";
 
 const abi = [
   {
     constant: true,
     inputs: [],
     name: "name",
-    outputs: [Array],
+    outputs: [
+      {
+        name: "",
+        type: "string"
+      }
+    ],
     payable: false,
     stateMutability: "view",
     type: "function",
@@ -17,7 +22,12 @@ const abi = [
     constant: true,
     inputs: [],
     name: "totalSupply",
-    outputs: [Array],
+    outputs: [
+      {
+        name: "",
+        type: "uint256"
+      }
+    ],
     payable: false,
     stateMutability: "view",
     type: "function",
@@ -25,9 +35,54 @@ const abi = [
   },
   {
     constant: true,
+    inputs: [
+      {
+        name: "",
+        type: "uint256"
+      }
+    ],
+    name: "bets",
+    outputs: [
+      {
+        name: "name",
+        type: "string"
+      },
+      {
+        name: "multiply",
+        type: "uint256"
+      },
+      {
+        name: "player",
+        type: "address"
+      },
+      {
+        name: "value",
+        type: "uint256"
+      },
+      {
+        name: "win",
+        type: "bool"
+      },
+      {
+        name: "expire",
+        type: "bool"
+      }
+    ],
+    payable: false,
+    stateMutability: "view",
+    type: "function",
+    signature: "0x22af00fa"
+  },
+  {
+    constant: true,
     inputs: [],
     name: "manager",
-    outputs: [Array],
+    outputs: [
+      {
+        name: "",
+        type: "address"
+      }
+    ],
     payable: false,
     stateMutability: "view",
     type: "function",
@@ -35,9 +90,19 @@ const abi = [
   },
   {
     constant: true,
-    inputs: [Array],
+    inputs: [
+      {
+        name: "",
+        type: "address"
+      }
+    ],
     name: "balanceOf",
-    outputs: [Array],
+    outputs: [
+      {
+        name: "",
+        type: "uint256"
+      }
+    ],
     payable: false,
     stateMutability: "view",
     type: "function",
@@ -47,7 +112,12 @@ const abi = [
     constant: true,
     inputs: [],
     name: "symbol",
-    outputs: [Array],
+    outputs: [
+      {
+        name: "",
+        type: "string"
+      }
+    ],
     payable: false,
     stateMutability: "view",
     type: "function",
@@ -55,27 +125,59 @@ const abi = [
   },
   {
     constant: true,
-    inputs: [Array],
+    inputs: [
+      {
+        name: "",
+        type: "address"
+      },
+      {
+        name: "",
+        type: "address"
+      }
+    ],
     name: "allowance",
-    outputs: [Array],
+    outputs: [
+      {
+        name: "",
+        type: "uint256"
+      }
+    ],
     payable: false,
     stateMutability: "view",
     type: "function",
     signature: "0xdd62ed3e"
   },
   {
-    inputs: [Array],
+    inputs: [
+      {
+        name: "initialSupply",
+        type: "uint256"
+      }
+    ],
     payable: false,
     stateMutability: "nonpayable",
     type: "constructor",
-    signature: "constructor",
-    constant: undefined
+    signature: "constructor"
   },
   {
     constant: false,
-    inputs: [Array],
+    inputs: [
+      {
+        name: "_to",
+        type: "address"
+      },
+      {
+        name: "_value",
+        type: "uint256"
+      }
+    ],
     name: "transfer",
-    outputs: [Array],
+    outputs: [
+      {
+        name: "success",
+        type: "bool"
+      }
+    ],
     payable: false,
     stateMutability: "nonpayable",
     type: "function",
@@ -83,23 +185,123 @@ const abi = [
   },
   {
     constant: false,
-    inputs: [],
-    name: "pay",
-    outputs: [Array],
-    payable: false,
-    stateMutability: "nonpayable",
-    type: "function",
-    signature: "0x1b9265b8"
-  },
-  {
-    constant: false,
-    inputs: [Array],
+    inputs: [
+      {
+        name: "_from",
+        type: "address"
+      },
+      {
+        name: "_to",
+        type: "address"
+      },
+      {
+        name: "_value",
+        type: "uint256"
+      }
+    ],
     name: "transferFrom",
-    outputs: [Array],
+    outputs: [
+      {
+        name: "success",
+        type: "bool"
+      }
+    ],
     payable: false,
     stateMutability: "nonpayable",
     type: "function",
     signature: "0x23b872dd"
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: "name",
+        type: "string"
+      },
+      {
+        name: "multiply",
+        type: "uint256"
+      },
+      {
+        name: "player",
+        type: "address"
+      },
+      {
+        name: "value",
+        type: "uint256"
+      }
+    ],
+    name: "createBet",
+    outputs: [
+      {
+        name: "success",
+        type: "bool"
+      }
+    ],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+    signature: "0xcd62e31f"
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: "index",
+        type: "uint256"
+      }
+    ],
+    name: "wonBet",
+    outputs: [
+      {
+        name: "success",
+        type: "bool"
+      }
+    ],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+    signature: "0xe75bcfaa"
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: "index",
+        type: "uint256"
+      }
+    ],
+    name: "lostBet",
+    outputs: [
+      {
+        name: "success",
+        type: "bool"
+      }
+    ],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+    signature: "0x37d272d0"
+  },
+  {
+    constant: false,
+    inputs: [
+      {
+        name: "index",
+        type: "uint256"
+      }
+    ],
+    name: "refundBet",
+    outputs: [
+      {
+        name: "success",
+        type: "bool"
+      }
+    ],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+    signature: "0xe1fdb4b4"
   }
 ];
 
