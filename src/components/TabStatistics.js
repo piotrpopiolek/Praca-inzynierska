@@ -40,13 +40,11 @@ const TabStatistics = props => (
         </Table.Cell>
         <Table.Cell width="6">
           <ProgressBar
-            percent={
-              Math.round(
-                (parseInt(props.statisticsGuest.goalAttempts) * 100) /
-                  (parseInt(props.statisticsHome.goalAttempts) +
-                    parseInt(props.statisticsGuest.goalAttempts))
-              ) || "0"
-            }
+            percent={Math.round(
+              (parseInt(props.statisticsGuest.goalAttempts) * 100) /
+                (parseInt(props.statisticsHome.goalAttempts) +
+                  parseInt(props.statisticsGuest.goalAttempts))
+            )}
           />
         </Table.Cell>
         <Table.Cell width="1">{props.statisticsGuest.goalAttempts}</Table.Cell>

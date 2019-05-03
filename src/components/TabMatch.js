@@ -22,6 +22,144 @@ const defaultValue = {
   tackles: "0"
 };
 
+const topTeams = {
+  possession: [
+    {
+      id: 1,
+      team: "Manchester City",
+      value: "63.7"
+    },
+    {
+      id: 2,
+      team: "Bayern Munich",
+      value: "62.2"
+    },
+    {
+      id: 3,
+      team: "FC Barcelona",
+      value: "61.9"
+    },
+    {
+      id: 4,
+      team: "Chelsea",
+      value: "61.8"
+    },
+    {
+      id: 5,
+      team: "Real Betis",
+      value: "60.8"
+    }
+  ],
+  freeKicks: [
+    {
+      id: 1,
+      team: "Bayern Munich",
+      value: "8.5"
+    },
+    {
+      id: 2,
+      team: "FC Barcelona",
+      value: "7.8"
+    },
+    {
+      id: 3,
+      team: "Saint-Germain",
+      value: "7.3"
+    },
+    {
+      id: 4,
+      team: "Real Madryt",
+      value: "6.9"
+    },
+    {
+      id: 5,
+      team: "Chelsea",
+      value: "6.5"
+    }
+  ],
+  yellowCards: [
+    {
+      id: 1,
+      team: "Bayern Munich",
+      value: "8.5"
+    },
+    {
+      id: 2,
+      team: "FC Barcelona",
+      value: "7.8"
+    },
+    {
+      id: 3,
+      team: "Saint-Germain",
+      value: "7.3"
+    },
+    {
+      id: 4,
+      team: "Real Madryt",
+      value: "6.9"
+    },
+    {
+      id: 5,
+      team: "Chelsea",
+      value: "6.5"
+    }
+  ],
+  redCards: [
+    {
+      id: 1,
+      team: "Bayern Munich",
+      value: "8.5"
+    },
+    {
+      id: 2,
+      team: "FC Barcelona",
+      value: "7.8"
+    },
+    {
+      id: 3,
+      team: "Saint-Germain",
+      value: "7.3"
+    },
+    {
+      id: 4,
+      team: "Real Madryt",
+      value: "6.9"
+    },
+    {
+      id: 5,
+      team: "Chelsea",
+      value: "6.5"
+    }
+  ],
+  goals: [
+    {
+      id: 1,
+      team: "Bayern Munich",
+      value: "8.5"
+    },
+    {
+      id: 2,
+      team: "FC Barcelona",
+      value: "7.8"
+    },
+    {
+      id: 3,
+      team: "Saint-Germain",
+      value: "7.3"
+    },
+    {
+      id: 4,
+      team: "Real Madryt",
+      value: "6.9"
+    },
+    {
+      id: 5,
+      team: "Chelsea",
+      value: "6.5"
+    }
+  ]
+};
+
 const panes = [
   {
     menuItem: "H2H",
@@ -60,7 +198,7 @@ const panes = [
     menuItem: "Top Team",
     render: props => (
       <Tab.Pane attached={false}>
-        <TabTopTeam />
+        <TabTopTeam topTeams={topTeams} />
       </Tab.Pane>
     )
   }

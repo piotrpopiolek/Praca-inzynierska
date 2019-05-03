@@ -1,7 +1,7 @@
 import React from "react";
-import { Table } from "semantic-ui-react";
+import { Table, Item } from "semantic-ui-react";
 
-const TabTopTeam = () => (
+const TabTopTeam = props => (
   <Table striped>
     <Table.Header>
       <Table.Row>
@@ -14,97 +14,51 @@ const TabTopTeam = () => (
       <Table.Row>
         <Table.Cell>Posiadanie</Table.Cell>
         <Table.Cell verticalAlign="top">
-          Notes
-          <br />
-          1<br />
-          2<br />
-          3<br />
-          4<br />
-          5<br />
+          {props.topTeams.possession.map(item => (
+            <p>
+              {item.id}. {item.team} {item.value}
+            </p>
+          ))}
         </Table.Cell>
       </Table.Row>
       <Table.Row>
         <Table.Cell>Rzuty rożne</Table.Cell>
         <Table.Cell>
-          Notes
-          <br />
-          1<br />
-          2<br />
-          3<br />
-          4<br />
-          5<br />
+          {props.topTeams.freeKicks.map(item => (
+            <p>
+              {item.id}. {item.team} {item.value}
+            </p>
+          ))}
         </Table.Cell>
       </Table.Row>
       <Table.Row>
         <Table.Cell>Żółte kartki</Table.Cell>
         <Table.Cell>
-          Notes
-          <br />
-          1<br />
-          2<br />
-          3<br />
-          4<br />
-          5<br />
+          {props.topTeams.yellowCards.map(item => (
+            <p>
+              {item.id}. {item.team} {item.value}
+            </p>
+          ))}
         </Table.Cell>
       </Table.Row>
       <Table.Row>
         <Table.Cell>Czerwone kartki</Table.Cell>
         <Table.Cell>
-          Notes
-          <br />
-          1<br />
-          2<br />
-          3<br />
-          4<br />
-          5<br />
+          {props.topTeams.redCards.map(item => (
+            <p>
+              {item.id}. {item.team} {item.value}
+            </p>
+          ))}
         </Table.Cell>
       </Table.Row>
       <Table.Row>
         <Table.Cell>Goli na mecz</Table.Cell>
         <Table.Cell>
-          Notes
-          <br />
-          1<br />
-          2<br />
-          3<br />
-          4<br />
-          5<br />
-        </Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>Seria wygranych meczów</Table.Cell>
-        <Table.Cell>
-          Notes
-          <br />
-          1<br />
-          2<br />
-          3<br />
-          4<br />
-          5<br />
-        </Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>Seria zremisowanych meczów</Table.Cell>
-        <Table.Cell>
-          Notes
-          <br />
-          1<br />
-          2<br />
-          3<br />
-          4<br />
-          5<br />
-        </Table.Cell>
-      </Table.Row>
-      <Table.Row>
-        <Table.Cell>Seria przegranych meczów</Table.Cell>
-        <Table.Cell>
-          Notes
-          <br />
-          1<br />
-          2<br />
-          3<br />
-          4<br />
-          5<br />
+          {props.topTeams.goals.map(item => (
+            <p>
+              {item.id}. {item.team} {item.value}
+            </p>
+          ))}
         </Table.Cell>
       </Table.Row>
     </Table.Body>
