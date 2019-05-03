@@ -10,7 +10,8 @@ class RowMatch extends Component {
     manager: "",
     message: "",
     payment: false,
-    bet: false
+    bet: false,
+    selectedBet: ""
   };
 
   handlePay = () => {};
@@ -32,20 +33,30 @@ class RowMatch extends Component {
     }));
   };
 
-  onBet = async event => {
-    const accounts = await web3.eth.getAccounts();
-
-    this.setState({ message: "Rozpoczynam transakcję..." });
-
-    /*
-    await soccerToken.methods.pay().send({
-      from: accounts[0]
-    });
-    */
-    this.setState({ message: "Transakcja zakończona." });
-
+  onBet1 = async event => {
     this.setState(() => ({
       bet: !this.state.bet
+    }));
+    this.setState(() => ({
+      selectedBet: this.props.match.r1
+    }));
+  };
+
+  onBetX = async event => {
+    this.setState(() => ({
+      bet: !this.state.bet
+    }));
+    this.setState(() => ({
+      selectedBet: this.props.match.rX
+    }));
+  };
+
+  onBet2 = async event => {
+    this.setState(() => ({
+      bet: !this.state.bet
+    }));
+    this.setState(() => ({
+      selectedBet: this.props.match.r2
     }));
   };
 
@@ -71,13 +82,13 @@ class RowMatch extends Component {
               <Cell textAlign="center">{match.time}</Cell>
               <Cell textAlign="left">{match.home}</Cell>
               <Cell textAlign="left">{match.guest}</Cell>
-              <Cell onClick={this.onBet} className="bet" textAlign="center">
+              <Cell onClick={this.onBet1} className="bet" textAlign="center">
                 {match.r1}
               </Cell>
-              <Cell onClick={this.onBet} className="bet" textAlign="center">
+              <Cell onClick={this.onBetX} className="bet" textAlign="center">
                 {match.rX}
               </Cell>
-              <Cell onClick={this.onBet} className="bet" textAlign="center">
+              <Cell onClick={this.onBet2} className="bet" textAlign="center">
                 {match.r2}
               </Cell>
               <Cell textAlign="center">
@@ -88,7 +99,12 @@ class RowMatch extends Component {
         </Table>
         <h1>{this.state.message}</h1>
         {this.state.payment ? <TabMatch H2H={this.props.match} /> : null}
-        {this.state.bet ? <TabBet matchDetail={this.props.match} /> : null}
+        {this.state.bet ? (
+          <TabBet
+            matchDetail={this.props.match}
+            selectedBet={this.state.selectedBet}
+          />
+        ) : null}
       </>
     );
   }
