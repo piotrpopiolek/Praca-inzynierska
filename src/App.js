@@ -124,6 +124,44 @@ const data = {
           guest: "Leicester",
           result: "1 : 0"
         }
+      ],
+      statisticsHome: [
+        {
+          ballPossession: "67",
+          goalAttempts: "24",
+          shotsOnGoal: "12",
+          shotsOffGoal: "6",
+          blockedShots: "6",
+          freeKicks: "12",
+          cornerKicks: "8",
+          offsides: "2",
+          goalkeeperSaves: "1",
+          fouls: "13",
+          redCards: "0",
+          yellowCards: "3",
+          totalPasses: "611",
+          completedPasses: "514",
+          tackles: "20"
+        }
+      ],
+      statisticsGuest: [
+        {
+          ballPossession: "33",
+          goalAttempts: "6",
+          shotsOnGoal: "1",
+          shotsOffGoal: "3",
+          blockedShots: "2",
+          freeKicks: "15",
+          cornerKicks: "6",
+          offsides: "3",
+          goalkeeperSaves: "9",
+          fouls: "13",
+          redCards: "1",
+          yellowCards: "3",
+          totalPasses: "293",
+          completedPasses: "189",
+          tackles: "16"
+        }
       ]
     },
     {
@@ -244,6 +282,44 @@ const data = {
           guest: "Burnley",
           result: "4 : 1"
         }
+      ],
+      statisticsHome: [
+        {
+          ballPossession: "30",
+          goalAttempts: "2",
+          shotsOnGoal: "0",
+          shotsOffGoal: "2",
+          blockedShots: "0",
+          freeKicks: "10",
+          cornerKicks: "0",
+          offsides: "2",
+          goalkeeperSaves: "6",
+          fouls: "5",
+          redCards: "0",
+          yellowCards: "1",
+          totalPasses: "264",
+          completedPasses: "157",
+          tackles: "16"
+        }
+      ],
+      statisticsGuest: [
+        {
+          ballPossession: "70",
+          goalAttempts: "25",
+          shotsOnGoal: "7",
+          shotsOffGoal: "4",
+          blockedShots: "14",
+          freeKicks: "7",
+          cornerKicks: "6",
+          offsides: "3",
+          goalkeeperSaves: "0",
+          fouls: "7",
+          redCards: "0",
+          yellowCards: "1",
+          totalPasses: "608",
+          completedPasses: "525",
+          tackles: "12"
+        }
       ]
     },
     {
@@ -363,6 +439,44 @@ const data = {
           home: "Manchester Utd",
           guest: "Chelsea",
           result: "2 : 1"
+        }
+      ],
+      statisticsHome: [
+        {
+          ballPossession: "52",
+          goalAttempts: "7",
+          shotsOnGoal: "5",
+          shotsOffGoal: "2",
+          blockedShots: "0",
+          freeKicks: "19",
+          cornerKicks: "6",
+          offsides: "5",
+          goalkeeperSaves: "2",
+          fouls: "9",
+          redCards: "0",
+          yellowCards: "3",
+          totalPasses: "465",
+          completedPasses: "391",
+          tackles: "15"
+        }
+      ],
+      statisticsGuest: [
+        {
+          ballPossession: "48",
+          goalAttempts: "16",
+          shotsOnGoal: "3",
+          shotsOffGoal: "7",
+          blockedShots: "26",
+          freeKicks: "14",
+          cornerKicks: "6",
+          offsides: "5",
+          goalkeeperSaves: "4",
+          fouls: "14",
+          redCards: "0",
+          yellowCards: "2",
+          totalPasses: "417",
+          completedPasses: "359",
+          tackles: "18"
         }
       ]
     },
