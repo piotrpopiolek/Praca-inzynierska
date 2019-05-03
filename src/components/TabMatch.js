@@ -26,8 +26,15 @@ const panes = [
   {
     menuItem: "Statystyki",
     render: props => (
-      <Tab.Pane attached={false}>
-        <TabStatistics />
+      <Tab.Pane
+        statisticsHome={props.statisticsHome}
+        statisticsGuest={props.statisticsGuest}
+        attached={false}
+      >
+        <TabStatistics
+          statisticsHome={props.statisticsHome}
+          statisticsGuest={props.statisticsGuest}
+        />
       </Tab.Pane>
     )
   },
@@ -48,6 +55,8 @@ const TabMatch = props => {
         home5={props.H2H.home5}
         guest5={props.H2H.guest5}
         head2head5={props.H2H.head2head5}
+        statisticsHome={props.H2H.statisticsHome}
+        statisticsGuest={props.H2H.statisticsGuest}
         menu={{ secondary: true, pointing: true }}
         panes={panes}
       />

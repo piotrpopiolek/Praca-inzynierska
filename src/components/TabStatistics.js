@@ -2,34 +2,50 @@ import React from "react";
 import { Table } from "semantic-ui-react";
 import ProgressBar from "./ProgressBar";
 
-const TabStatistics = () => (
+const TabStatistics = props => (
   <Table celled>
     <Table.Body>
       <Table.Row>
-        <Table.Cell width="1">0</Table.Cell>
+        <Table.Cell width="1">
+          {props.statisticsHome.ballPossession}%
+        </Table.Cell>
         <Table.Cell width="6">
-          <ProgressBar percent="0" />
+          <ProgressBar percent={props.statisticsHome.ballPossession} />
         </Table.Cell>
         <Table.Cell width="3" textAlign="center">
           Posiadanie piłki
         </Table.Cell>
         <Table.Cell width="6">
-          <ProgressBar percent="33" />
+          <ProgressBar percent={props.statisticsGuest.ballPossession} />
         </Table.Cell>
-        <Table.Cell width="1">33%</Table.Cell>
+        <Table.Cell width="1">
+          {props.statisticsGuest.ballPossession}%
+        </Table.Cell>
       </Table.Row>
       <Table.Row>
-        <Table.Cell width="1">24</Table.Cell>
+        <Table.Cell width="1">{props.statisticsHome.goalAttempts}</Table.Cell>
         <Table.Cell width="6">
-          <ProgressBar percent="80" />
+          <ProgressBar
+            percent={Math.round(
+              (parseInt(props.statisticsHome.goalAttempts) * 100) /
+                (parseInt(props.statisticsHome.goalAttempts) +
+                  parseInt(props.statisticsGuest.goalAttempts))
+            )}
+          />
         </Table.Cell>
         <Table.Cell width="3" textAlign="center">
           Próby strzałów
         </Table.Cell>
         <Table.Cell width="6">
-          <ProgressBar percent="20" />
+          <ProgressBar
+            percent={Math.round(
+              (parseInt(props.statisticsGuest.goalAttempts) * 100) /
+                (parseInt(props.statisticsHome.goalAttempts) +
+                  parseInt(props.statisticsGuest.goalAttempts))
+            )}
+          />
         </Table.Cell>
-        <Table.Cell width="1">6</Table.Cell>
+        <Table.Cell width="1">{props.statisticsGuest.goalAttempts}</Table.Cell>
       </Table.Row>
       <Table.Row>
         <Table.Cell width="1">12</Table.Cell>
