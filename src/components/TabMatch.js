@@ -4,6 +4,24 @@ import TabH2H from "./TabH2H";
 import TabStatistics from "./TabStatistics";
 import TabTopTeam from "./TabTopTeam";
 
+const defaultValue = {
+  ballPossession: "0",
+  goalAttempts: "0",
+  shotsOnGoal: "0",
+  shotsOffGoal: "0",
+  blockedShots: "0",
+  freeKicks: "0",
+  cornerKicks: "0",
+  offsides: "0",
+  goalkeeperSaves: "0",
+  fouls: "0",
+  redCards: "0",
+  yellowCards: "0",
+  totalPasses: "0",
+  completedPasses: "0",
+  tackles: "0"
+};
+
 const panes = [
   {
     menuItem: "H2H",
@@ -32,8 +50,8 @@ const panes = [
         attached={false}
       >
         <TabStatistics
-          statisticsHome={props.statisticsHome}
-          statisticsGuest={props.statisticsGuest}
+          statisticsHome={props.statisticsHome || defaultValue}
+          statisticsGuest={props.statisticsGuest || defaultValue}
         />
       </Tab.Pane>
     )
