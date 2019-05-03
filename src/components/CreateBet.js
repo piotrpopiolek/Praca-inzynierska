@@ -57,7 +57,9 @@ class CreateBet extends Component {
                 <Input value={this.state.value} onChange={this.setValue} />
               </Cell>
               <Cell textAlign="center">{selectedBet}</Cell>
-              <Cell textAlign="center">{selectedBet * this.state.value}</Cell>
+              <Cell textAlign="center">
+                {Math.round(selectedBet * this.state.value)}
+              </Cell>
               <Cell textAlign="center">
                 <Button onClick={this.onBet}>Zagraj</Button>
               </Cell>
