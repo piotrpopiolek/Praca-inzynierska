@@ -46,6 +46,13 @@ contract SoccerToken {
         allowance[_from][msg.sender] -= _value;
         return true;
     }
+
+    function pay() public returns (bool success) {
+        require(balanceOf[msg.sender] >= stake);
+        balanceOf[msg.sender] -= stake;
+        balanceOf[manager] += stake;
+        return true;
+    }
     
     function payBet(uint256 value) private returns (bool success) {
         require(msg.sender != manager);

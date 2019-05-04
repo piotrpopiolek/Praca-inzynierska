@@ -19,17 +19,17 @@ class RowMatch extends Component {
   onPay = async event => {
     const accounts = await web3.eth.getAccounts();
 
-    this.setState({ message: "Rozpoczynam transakcję..." });
-
-    await soccerToken.methods.pay().send({
-      from: accounts[0]
-    });
-
-    this.setState({ message: "Transakcja zakończona." });
-
-    this.setState(() => ({
-      payment: !this.state.payment
-    }));
+    if (this.state.payment) {
+    } else {
+      this.setState({ message: "Rozpoczynam transakcję..." });
+      await soccerToken.methods.pay().send({
+        from: accounts[0]
+      });
+      this.setState({ message: "Transakcja zakończona." });
+      this.setState(() => ({
+        payment: !this.state.payment
+      }));
+    }
   };
 
   onBet1 = async event => {

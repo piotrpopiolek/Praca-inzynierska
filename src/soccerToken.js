@@ -1,6 +1,6 @@
 import web3 from "./web3";
 
-const address = "0xbf8f0fA34925cA589C4555BEaEc13d624E988C50";
+const address = "0x28e23Aa4570cf7C38a1f459Ee5178C9Df9C3cEe4";
 
 const abi = [
   {
@@ -210,6 +210,21 @@ const abi = [
     stateMutability: "nonpayable",
     type: "function",
     signature: "0x23b872dd"
+  },
+  {
+    constant: false,
+    inputs: [],
+    name: "pay",
+    outputs: [
+      {
+        name: "success",
+        type: "bool"
+      }
+    ],
+    payable: false,
+    stateMutability: "nonpayable",
+    type: "function",
+    signature: "0x1b9265b8"
   },
   {
     constant: false,
