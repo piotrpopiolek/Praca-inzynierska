@@ -18,9 +18,16 @@ class CreateBet extends Component {
 
     this.setState({ message: "Rozpoczynam transakcję..." });
 
-    await soccerToken.methods.pay().send({
-      from: accounts[0]
-    });
+    await soccerToken.methods
+      .createBet(
+        this.props.matchDetail.home + " vs " + this.props.matchDetail.guest,
+        this.props.matchDetail.selectedBet * 10,
+        accounts[0],
+        this.state.value
+      )
+      .send({
+        from: accounts[0]
+      });
 
     this.setState({ message: "Transakcja zakończona." });
 
@@ -37,7 +44,7 @@ class CreateBet extends Component {
 
   render() {
     const { HeaderCell, Row, Cell, Body, Header } = Table;
-    const match = this.props.matchDetail;
+
     const selectedBet = this.props.matchDetail.selectedBet;
     return (
       <>
