@@ -60,7 +60,7 @@ class CreateBet extends Component {
           <Body>
             <Row>
               <Cell textAlign="center">
-                <Input value={this.state.value} onChange={this.setValue} />
+                <Input type="number" value={this.state.value} onChange={this.setValue} />
               </Cell>
               <Cell textAlign="center">{selectedBet}</Cell>
               <Cell textAlign="center">
