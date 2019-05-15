@@ -14,7 +14,7 @@ class FormSale extends Component {
     tokenPrice: 1000000000000000,
     tokenPriceInEther: 0.0001,
     tokensAvailable: 1000000,
-    tokensSold: 256440,
+    tokensSold: "",
     percent: "",
     message: "",
     balance: 10000,

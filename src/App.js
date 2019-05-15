@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Layout from "./components/Layout";
 import RowMatch from "./components/RowMatch";
 import FormSale from "./components/FormSale";
+import ipfs from "./Ipfs";
 import "./App.css";
 
 const data = {
@@ -2509,7 +2510,6 @@ class App extends Component {
     const matches = data.matches;
     return (
       <Layout>
-        {/*<FormSale />*/}
         {matches.map(match => (
           <RowMatch key={match.id} match={match} />
         ))}
