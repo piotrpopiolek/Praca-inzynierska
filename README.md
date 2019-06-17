@@ -1,3 +1,26 @@
+#Streszczenie
+
+Celem pracy jest stworzenie tokena użytkowego na bazie blockchaina ethereum, token ten
+pełni rolę jednostki rozliczeniowej w platformie oferującej dostęp do statystyk, analiz meczowych
+i prostych zakładów bukmacherskich. Dodatkowym celem pracy jest przedstawienie czym są
+kryptowaluty, blockchain oraz powiązane z nimi procesy biznesowe i technologiczne. Postawione
+cele zostały w pełni zrealizowane, czego wynikiem jest internetowa aplikacja platformy meczowej
+i dedykowana dla niej kryptowaluta. Platforma w swoim działaniu wykorzystuje
+zaimplementowane w kryptowalucie inteligentne umowy, które pozwalają automatyzować proces
+płatności. Praca zawiera opis poszczególnych etapów projektowania i implementowania całej
+struktury.
+
+#Summary
+
+The goal of this thesis is to create utility token based on ethereum blockchain. This token is
+a unit of account in a platform which provides an access to statistics of match analysis and simple
+sports betting. An additional goal of this thesis is to explain what exactly are cryptocurrencies,
+blockchain and technological / business processes related to them. All goals have been successfully
+achieved – result of it is a match platform web application with its own dedicated cryptocurrency.
+This platform is using an smart contracts which have been implemented into cryptocurrency. It's the
+way to automate the process of payment. This thesis contains description of every stage of
+designing and implementing of the whole structure.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
