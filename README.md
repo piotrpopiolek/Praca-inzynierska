@@ -1,4 +1,4 @@
-#Streszczenie
+# Streszczenie
 
 Celem pracy jest stworzenie tokena użytkowego na bazie blockchaina ethereum, token ten
 pełni rolę jednostki rozliczeniowej w platformie oferującej dostęp do statystyk, analiz meczowych
@@ -10,7 +10,7 @@ zaimplementowane w kryptowalucie inteligentne umowy, które pozwalają automatyz
 płatności. Praca zawiera opis poszczególnych etapów projektowania i implementowania całej
 struktury.
 
-#Summary
+# Summary
 
 The goal of this thesis is to create utility token based on ethereum blockchain. This token is
 a unit of account in a platform which provides an access to statistics of match analysis and simple
