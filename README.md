@@ -1,3 +1,5 @@
+Do pełnej funkcjonalności platformy należy mieć zainstalowany portfel [Metamask](https://metamask.io/)
+
 # Streszczenie
 
 Celem pracy jest stworzenie tokena użytkowego na bazie blockchaina ethereum, token ten
@@ -11,8 +13,6 @@ płatności. Praca zawiera opis poszczególnych etapów projektowania i implemen
 struktury.
 
 [Strona platformy](https://piotrpopiolek.github.io/Praca-inzynierska/)
-
-Do pełnej funkcjonalności platformy należy mieć zainstalowany portfel [Metamask](https://metamask.io/)
 
 # Summary
 
