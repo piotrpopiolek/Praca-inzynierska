@@ -12,8 +12,6 @@ zaimplementowane w kryptowalucie inteligentne umowy, które pozwalają automatyz
 płatności. Praca zawiera opis poszczególnych etapów projektowania i implementowania całej
 struktury.
 
-[Strona platformy](https://piotrpopiolek.github.io/Praca-inzynierska/)
-
 # Summary
 
 The goal of this thesis is to create utility token based on ethereum blockchain. This token is
